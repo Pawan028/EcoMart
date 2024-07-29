@@ -1,0 +1,192 @@
+/* styles.css or your component-specific CSS file */
+
+/* General styling for the profile page */
+.profile {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  /* Header styling */
+  .profile h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Form styling */
+  .profile form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .profile .form-label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .profile .form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .profile .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+  }
+  
+  .profile .btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .profile .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  .profile .btn-primary:focus {
+    outline: none;
+  }
+
+  .alert {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.alert-success {
+    background-color: #4CAF50; /* Green */
+    border: 1px solid #45a049;
+}
+
+.alert-error {
+    background-color: #f44336; /* Red */
+    border: 1px solid #d32f2f;
+}
+
+.alert-warning {
+    background-color: #ff9800; /* Orange */
+    border: 1px solid #e68900;
+}
+
+.alert-info {
+    background-color: #2196F3; /* Blue */
+    border: 1px solid #1976D2;
+}
+
+.alert .icon {
+    margin-right: 10px;
+}
+
+.alert .message {
+    flex: 1;
+}
+
+.alert .close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.alert .close-btn:hover {
+    opacity: 0.7;
+}
+
+/* Add transition for smooth appearance/disappearance */
+.alert {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.alert.hidden {
+    opacity: 0;
+}
+/* Toast notification styling */
+.toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    min-width: 250px;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #28a745; /* Default success color */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+  }
+  
+  .toast.success {
+    background-color: #28a745;
+  }
+  
+  .toast.error {
+    background-color: #dc3545;
+  }
+  
+  .toast.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .toast.hide {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  
+  .toast p {
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .toast::before {
+    content: "✔️";
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .toast.error::before {
+    content: "❌";
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

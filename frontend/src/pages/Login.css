@@ -1,0 +1,103 @@
+/* styles.css or your component-specific CSS file */
+
+/* Card styling for the login form */
+.login {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .login h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .login .form-label {
+    font-weight: bold;
+  }
+  
+  .login .btn-primary {
+    width: 100%;
+  }
+  
+  /* Toast notification styling */
+  .toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    min-width: 250px;
+    padding: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #28a745, #218838);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .toast.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .toast.hide {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  
+  /* Toast content styling */
+  .toast p {
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .toast::before {
+    content: "✔️";
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  /* Additional design elements */
+  .toast.show {
+    animation: slideIn 0.5s forwards;
+  }
+  /* signup.css */
+
+.info-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1em;
+    color: #333;
+}
+
+.info-text a {
+    color: #007bff; /* Change this to the desired link color */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for color change on hover */
+}
+
+.info-text a:hover {
+    color: #0056b3; /* Change this to the desired hover color */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  

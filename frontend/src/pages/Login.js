@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import './Login.css'; // Ensure you import the CSS file
 
 const Login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showToast, setShowToast] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -13,7 +15,11 @@ const Login = ({ setIsLoggedIn }) => {
       const { data } = await axios.post('/api/users/login', { email, password });
       localStorage.setItem('token', data.token);
       setIsLoggedIn(true);
-      navigate('/');
+      setShowToast(true);
+      setTimeout(() => {
+        setShowToast(false);
+        navigate('/');
+      }, 2000); // Adjust the duration as needed
     } catch (error) {
       console.error('Error logging in:', error);
     }
@@ -33,7 +39,19 @@ const Login = ({ setIsLoggedIn }) => {
         </div>
         <button type="submit" className="btn btn-primary">Login</button>
       </form>
-      <p>If you forgot your password, click <Link to="/forgot-password">here</Link> to reset it.</p>
+      <p className="info-text">
+        If you forgot your password, click <Link to="/forgot-password">ForgotPassword</Link> to reset it.
+        <br />
+        or
+        <br />
+        Don't have an account? <Link to="/register">Sign up</Link>
+      </p>
+
+      {showToast && (
+        <div className="toast show">
+          <p>Login successful!</p>
+        </div>
+      )}
     </div>
   );
 };
